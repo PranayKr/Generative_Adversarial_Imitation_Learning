@@ -143,7 +143,7 @@ for 1000 iterations Hence there is much scope for improvement to get better resu
 https://arxiv.org/abs/1606.03476
 ## 2) Proximal Policy Optimization Algorithms (PPO) :
 https://arxiv.org/abs/1707.06347
-3) https://towardsdatascience.com/entropy-in-soft-actor-critic-part-1-92c2cd3a3515
+## 3) https://towardsdatascience.com/entropy-in-soft-actor-critic-part-1-92c2cd3a3515
 ## 4) Proximal Policy Optimization (PPO) : 
  https://www.youtube.com/watch?v=hlv79rcHws0
 ## 5) A Gentle Introduction to Generative Adversarial Network Loss Functions :
