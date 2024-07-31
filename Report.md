@@ -121,6 +121,23 @@ for 1000 iterations Hence there is much scope for improvement to get better resu
 
 ![gail_plot_atari_breakout](https://github.com/PranayKr/Generative_Adversarial_Imitation_Learning/blob/main/gail_plot_tari_breakout.png)
 
+## CONCLUSION
+Unfortunately I was able to achieve a mean score of around +1.7 only over 100 consecutive episodes after training the model
+for 1000 iterations Hence there is much scope for improvement to get better results .
+
+## Ideas for Future Works (Scope for Improvement / Better Results) :
+1) Improved Results might be obtained by training for larger number of episodes as the model seems to take longer time for reaching the optimal solution
+
+2) Pretraining the Generator Model (PPO (Actor-Critic) Model) using Behaviour Cloning might help in achieving improved performance of the agent . As suggested in the Reference Paper : Generative Adversarial imitation Learning (GAIL) : https://arxiv.org/abs/1606.03476
+
+3) Tweaking the model architecture / hyperparameters / using different activation functions / loss functions for Actor Model / Discriminator Model might lead to better results
+
+4) Implementation of GAIL using TRPO (Trust Region Policy Optimization) Algorithm might yield better results
+
+5) Implementation of GAIL using Wasserstein GAN (W-GAN) Architecture which could help in more stable training and faster convergence to the optimal solution and countering the issue of modal collapse of normal GAN architectures
+
+
+
 
 
 
