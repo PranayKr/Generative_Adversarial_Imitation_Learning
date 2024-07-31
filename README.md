@@ -5,3 +5,5 @@ A) Hit a ball towards a brick wall and acquires points ( +1 for every hit per br
 B) Not miss hitting the ball once it rebounds ,otherwise it loses life . The agent has a total of 5 lives . Losing all the lives leads to termination of the game and the games then resets to initial state .
 # Results Showcase :
 ![trained_agent_playing_atari_breakout_gym_env](https://github.com/PranayKr/Generative_Adversarial_Imitation_Learning/blob/main/Breakout_Gym.gif)
+# Solution Architecture Diagram :
+![solution_archtecture_diagram](https://github.com/PranayKr/Generative_Adversarial_Imitation_Learning/blob/main/Breakout_Gym.gif)
