@@ -6,4 +6,5 @@ B) Not miss hitting the ball once it rebounds ,otherwise it loses life . The age
 # Results Showcase :
 ![trained_agent_playing_atari_breakout_gym_env](https://github.com/PranayKr/Generative_Adversarial_Imitation_Learning/blob/main/Breakout_Gym.gif)
 # Solution Architecture Diagram :
-![solution_archtecture_diagram](https://github.com/PranayKr/Generative_Adversarial_Imitation_Learning/blob/main/Breakout_Gym.gif)
+![solution_archtecture_diagram](https://github.com/PranayKr/Generative_Adversarial_Imitation_Learning/blob/main/GAIL_BREAKOUT_ARCHITECTURE.png)
+
