@@ -119,6 +119,8 @@ for 1000 iterations Hence there is much scope for improvement to get better resu
 
 ## Comparison plot showing the rewards acquired by the trained agent and the expert over 1000 trajectories / episodes
 
+![gail_plot_atari_breakout](https://github.com/PranayKr/Generative_Adversarial_Imitation_Learning/blob/main/gail_plot_tari_breakout.png)
+
 
 
 
