@@ -80,6 +80,42 @@ All the 3 loss functions mentioned as above are added together to get the overal
 ## 4) Gradient Ascent Algorithm for loss calculation :
 Negative of the Total loss is taken to maximize the loss / cost Function of the Discriminator
 ![ppo_calculation_equation](https://github.com/PranayKr/Generative_Adversarial_Imitation_Learning/blob/main/ppo_calculation.png)
+## 5) Adam Optimizer
+Adam Optimizer was used to train the PPO (Actor-Critic) Generator Model with a learning rate of 1e-4
+
+Hence on the highest level the GAIL model is functioning similar to a Generative Adversarial Network (GAN) model as it has two sub-models / networks : the Generator (PPO Actor-Critic Model) and the Discriminator which are playing a zero-sum game / MiniMax Game with each other to achieve Nash Equilibrium at which stage the Generator Model should be able to generate trajectories (State-Action pairs) which should be able to match the probability distribution of Expert Trajectories (State-Action pairs) and hence fool / confuse the Discriminator Model in accurately classifying the trajectories from the Expert Dataset and Generated ones
+
+## Hyper-Parameters Used
+1) Batch_Size : 32
+
+2) d_step : 1 ( Discriminator Step during Training )
+
+3) a_step : 3 ( Generator (PPO (Actor-Critic)) Step during Training)
+
+4) Target_Score : 16
+
+5) Gamma (Discount Factor) : 0.99
+
+6) Learning Rate ( Discriminator) : 1e-5
+
+7) Learning Rate (Generator(PPO (Actor-Critic))) : 1e-4
+
+8) Number of Episodes : 1000 (1e3)
+
+9) clip_value (for surrogate function clipping) : 0.2
+
+10) c_1 (parameter / multiplying factor for Value Function Loss ) : 1
+
+11) c_2 (parameter / multiplying factor for Entropy Bonus Loss) : 0.01
+
+12) Lambda (for Generative Adversarial Estimate (GAE) calculation) : 1
+
+## RESULTS ACHIEVED
+Unfortunately I was able to achieve a mean score of around +1.7 only over 100 consecutive episodes after training the model
+for 1000 iterations Hence there is much scope for improvement to get better results .
+
+## Output Results Video
+
 
 
 
