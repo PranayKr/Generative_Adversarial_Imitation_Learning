@@ -159,7 +159,7 @@ https://medium.com/@ODSC/watch-imitation-learning-reinforcement-learning-for-the
 ##10) Imitation Learning: Reinforcement Learning For The Real World — Dr. Byron Galbraith : 
 https://www.youtube.com/watch?v=K_c2ko4AKgg
 
-##NOTE :
+## NOTE :
 1) This article is also published in LinkedIn ( )
 2) If you wish to connect drop me a message over LinkedIn ( https://www.linkedin.com/in/pranay-kumar-02b35524/ ) or email at pranay.scorpio9@gmail.com
 
