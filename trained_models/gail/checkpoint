@@ -1,0 +1,2 @@
+model_checkpoint_path: "GAIL_model_breakout-v0_1000iter.ckpt"
+all_model_checkpoint_paths: "GAIL_model_breakout-v0_1000iter.ckpt"
