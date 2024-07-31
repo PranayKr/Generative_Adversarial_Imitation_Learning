@@ -136,6 +136,34 @@ for 1000 iterations Hence there is much scope for improvement to get better resu
 
 5) Implementation of GAIL using Wasserstein GAN (W-GAN) Architecture which could help in more stable training and faster convergence to the optimal solution and countering the issue of modal collapse of normal GAN architectures
 
+![retro_game_atari_breakout](https://github.com/PranayKr/Generative_Adversarial_Imitation_Learning/blob/main/Retro%20Game%20Atari%20Breakout%20Blog%20Thumbnail.png)
+
+## REFERENCES
+## 1) Generative Adversarial imitation Learning (GAIL) : 
+https://arxiv.org/abs/1606.03476
+## 2) Proximal Policy Optimization Algorithms (PPO) :
+https://arxiv.org/abs/1707.06347
+3) https://towardsdatascience.com/entropy-in-soft-actor-critic-part-1-92c2cd3a3515
+## 4) Proximal Policy Optimization (PPO) : 
+ https://www.youtube.com/watch?v=hlv79rcHws0
+## 5) A Gentle Introduction to Generative Adversarial Network Loss Functions :
+https://machinelearningmastery.com/generative-adversarial-network-loss-functions/
+##6) Human-level control through deep reinforcement Learning :
+https://storage.googleapis.com/deepmind-data/assets/papers/DeepMindNature14236Paper.pdf
+##7) Imitation Learning Tutorial ICML 2018 :
+ https://www.youtube.com/watch?v=WjFdD7PDGw0
+## 8) A brief overview of Imitation Learning :
+https://smartlabai.medium.com/a-brief-overview-of-imitation-learning-8a8a75c44a9c
+##9) Imitation Learning: Reinforcement Learning For The Real World :
+https://medium.com/@ODSC/watch-imitation-learning-reinforcement-learning-for-the-real-world-65200d7288e6
+##10) Imitation Learning: Reinforcement Learning For The Real World — Dr. Byron Galbraith : 
+https://www.youtube.com/watch?v=K_c2ko4AKgg
+
+##NOTE :
+1) This article is also published in LinkedIn ( )
+2) If you wish to connect drop me a message over LinkedIn ( https://www.linkedin.com/in/pranay-kumar-02b35524/ ) or email at pranay.scorpio9@gmail.com
+
+
 
 
 
