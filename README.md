@@ -14,16 +14,21 @@ Discrete : The action space is 4 dimensional. Four discrete actions of the Paddl
 # SOLUTION CRITERIA
 The environment is considered as solved when the agent gets an average score of +16 over 100 consecutive episodes.
 # Installation Instructions to setup the Project (on Windows 10 OS ):
-Setting Up Python Environment :
+## Setting Up Python Environment :
 Download and install Anaconda 3 (latest version 5.3) from this link (https://www.anaconda.com/download/) for the specific Operating System and Architecture (64-bit or 32-bit) being used for Python 3.6 + version onwards
 Create (and activate) a new environment with Python 3.6 from the provided environment file atari_breakout_env.yml . Open Anaconda prompt and then execute the below given commands:
+
 a) conda env create -f atari_breakout_env.yml
+
 b) Add the path to System’s Environment Variables : << Relative Path where Anaconda3 is installed on system>> \envs\atari_breakout_env\Scripts \.qt-post-link.bat to solve the error as stated as below :
 ERROR conda.core.link:_execute(699): An error occurred while installing package ‘defaults::qt-5.9.7-vc14h73c81de_0’. Rolling back transaction: done LinkError: post-link script failed for package defaults::qt-5.9.7-vc14h73c81de_0 location of failed script: F:\Anaconda3_Reinstall\envs\atari_breakout_env\Scripts\.qt-post-link.bat
+
 c) Activate the Conda Environment created : conda activate atari_breakout_env
+
 d) Download Roms.rar from the link https://github.com/openai/atari-py it contains 2 zip files inside HC ROMS.zip and ROMS.zip . Extract Roms.rar followed by extracting ROMS.zip. Then run the following command from Anaconda Prompt Shell : python -m atari_py.import_roms C:\Users\<<Username>>\Downloads\Roms\ROMS to solve the error as stated as below :
 Exception: ROM is missing for breakout, see https://github.com/openai/atari-py#roms for instructions
-# Details of running the Code to Train the Agent / Test the Already Trained Agent :
+
+## Details of running the Code to Train the Agent / Test the Already Trained Agent :
 After creation and activation of the environment for the implementation as mentioned in the previous section :
 1) Download the zipped source code file Breakout.zip and extract and save to a local system path
 2) In the Anaconda Prompt Shell navigate inside the Breakout/ folder where the source code has been downloaded .
