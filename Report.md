@@ -79,6 +79,10 @@ Mean of Squared Difference of Predicted Value Functions for the current state an
 All the 3 loss functions mentioned as above are added together to get the overall loss function for the PPO (Actor-Critic) Generator Model after multiplying the Entropy Bonus Loss and Value Function Loss by their corresponding parameter values
 ## 4) Gradient Ascent Algorithm for loss calculation :
 Negative of the Total loss is taken to maximize the loss / cost Function of the Discriminator
+![ppo_calculation_equation](https://github.com/PranayKr/Generative_Adversarial_Imitation_Learning/blob/main/ppo_calculation.png)
+
+
+
 
 
 
