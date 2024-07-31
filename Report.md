@@ -115,6 +115,10 @@ Unfortunately I was able to achieve a mean score of around +1.7 only over 100 co
 for 1000 iterations Hence there is much scope for improvement to get better results .
 
 ## Output Results Video
+![trained_agent_playing_atari_breakout_gym_env](https://github.com/PranayKr/Generative_Adversarial_Imitation_Learning/blob/main/Breakout_Gym.gif)
+
+## Comparison plot showing the rewards acquired by the trained agent and the expert over 1000 trajectories / episodes
+
 
 
 
