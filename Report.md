@@ -46,5 +46,40 @@ j) Policy-Gradient Methods : Policy-Gradient Methods are a subclass of Policy-Ba
 k) Actor-Critic Methods : Actor-Critic Methods are at the intersection of Value-Based Methods such as Deep-Q Network and Policy-Based Methods such as Reinforce. They use Value-Based Methods to estimate optimal action-value function which is then used as a baseline to reduce the variance of Policy-Based Methods. Actor-Critic Agents are more stable than Value-Based Agents and need fewer samples/data to learn than Policy-Based Agents. Two Neural Networks are used here one for the Actor and one for the Critic. The Critic Neural-Net takes in a state to output State-Value function of Policy PI. The Actor Neural Net takes in a state and outputs action with highest probability to be taken for that state which is used then to calculate TD-Estimate for current state by using the reward for current state and the next state. The Critic Neural-Net gets trained using this TD-Estimate value. The Critic Neural-Net then is used to calculate the Advantage Function (sum of reward for current state and difference of discounted TD-Estimate of next state and TD-Estimate of current state) which is then used as a baseline to train the Actor Neural-net.
 
 ## High-level Architectural Design of the Solution
+![solution_archtecture_diagram](https://github.com/PranayKr/Generative_Adversarial_Imitation_Learning/blob/main/GAIL_BREAKOUT_ARCHITECTURE.png)
+
+## Description of the Learning Algorithms / Model Architectures used
+For building the Generator Model Actor-Critic Neural Net Architecture was used .
+## Actor Model Architecture (Policy-Net) Details : 
+Convolutional Neural Net Architecture was used with 3 Convolutional Layers having 32 , 64 , 64 number of output filters | 8 , 4 , 3 Kernel Size | and Stride Value of 4 , 2 , 1 respectively in the same order . The 3-layered Convolutional stack had RELU Activation function . The flattened output feature vector of the last convolutional layer was provided as input to a fully connected layer on which RELU activation function was applied . The 2nd Fully connected layer had number of output neurons equivalent to the length of the Discrete Action Space i.e. 4 . Random Categorical Function was applied on top of the output of the 2nd fully connected layer to get the probability distribution of each action corresponding to the normalized input state / observation to the Actor Model . Hence the Actor Model outputs a policy matching the Input state to each action with varying probabilities
+## Critic Model Architecture (Value-Net) Details :
+Critic Model was implemented using similar ConvNet Architecture as the Actor Model except for the difference being that the final fully connected layer has only 1 output neuron corresponding to the value function predictions done by the Critic Model
+## Proximal Policy Optimization Algorithm :
+Proximal Policy Optimization Algorithm was used to train the Actor-Critic Model described above which is an on-policy gradient method for reinforcement learning
+## Discriminator Model Architecture Details :
+The Discriminator Network also uses similar Convolutional Layer Stack as used in the Actor and Critic Models but the flattened feature vector of the last convolutional layer is concatenated with the one-hot encoded action vector mentioned before . This concatenated vector is now provided as input to the first fully connected layer followed by another fully connected layer having 1 output neuron .
+## A brief summary of the functioning of GAIL Model used for this task :
+1) The Actor Model interacts with Break-Vo Open AI Gym environment to receive a batch of randomly sampled observations as input ; the number of observations being equivalent to the batch size . The Observation array is pre-processed to reduce its dimensionality and then normalized before being fed to the Actor Model . The Actor Model outputs a policy mapping the actions to the input state with varying probabilities
+2) Hence we get corresponding values of state , action , reward and next-state . The state and action pairs generated are randomly sampled based on the batch-size number and are provided as input to the Discriminator Network along with the State Action pairs generated from the Expert Trajectory Dataset .
+3)  One extra pre-processing step when dealing with Observation states from Expert Demonstration dataset is to read the images present in the paths mentioned in the image path values provided as Expert Observation State values and then pre-process them .
+4)  The Discriminator Network takes as input the state-action pairs randomly sampled from the Generator Model (Actor-Critic PPO Model) and the state-action pairs randomly sampled from the Expert Trajectory / Demonstration Dataset . The Action input is one-hot encoded and noise is added to it to stabilize the training . The Discriminator Network also uses similar Convolutional Layer Stack as used in the Actor and Critic Models but the flattened feature vector of the last convolutional layer is concatenated with the one-hot encoded action vector mentioned before . This concatenated vector is now provided as input to the first fully connected layer followed by another fully connected layer having 1 output neuron .
+5)  Hence in this way the Discriminator Network is used twice separately with input state-action pairs from the Generator and the Expert Demonstration Dataset to calculate the log probability of s,a pairs from the Expert Dataset and inverse of log probability of the s,a pairs from the Generator Model
+6) The overall loss function for the Discriminator which it is supposed to minimize is the negative of average of the sum of both the log probability value for the Expert trajectory and Inverse of Log Probability for the Generator trajectory
+7) Adam Optimizer is used for minimizing the loss / cost function of the Generator with a learning rate of 1e-5
+8) The log of the probabilities of generator model s,a pairs clipped within some value range is now provided as a reward signal to the Critic Network of the Generator Model
+9)  The Critic Network is then used to calculate the Generalized Advantage Estimate values which are used to train the Actor Model
+
+## Loss Functions used for the PPO (Actor-Critic) Generator Model :
+## 1) Clipped Surrogate Function Loss for the Actor Model :
+Ratio of the exponents of Action Probabilities by the Current Policy and Old Policy is calculated followed by clipping them in a given range and then calculating the mean of minimum of the product of the GAE values and Normal Ratios and the product of GAE values and clipped ratios
+## 2) Entropy Bonus Loss :
+Mean / Average of the product of Action Probabilities predicted by the current policy and log of the clipped current policy action probabilities is calculated . The Entropy Bonus Loss acts as an Entropy Regularization term which helps in ensuring sufficient exploration which allows the agent to discover faster and better policies
+## 3) Value Function Loss for the Critic Model :
+Mean of Squared Difference of Predicted Value Functions for the current state and Temporal Difference Estimate (TD-Estimate) of the Critic Model for the next states i.e. the sum of Current Reward and product of the Discount Factor Gamma and the next states is calculated
+All the 3 loss functions mentioned as above are added together to get the overall loss function for the PPO (Actor-Critic) Generator Model after multiplying the Entropy Bonus Loss and Value Function Loss by their corresponding parameter values
+## 4) Gradient Ascent Algorithm for loss calculation :
+Negative of the Total loss is taken to maximize the loss / cost Function of the Discriminator
+
+
 
 
